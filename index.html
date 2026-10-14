@@ -12,40 +12,80 @@
     --ink:#2b2620; --muted:#8a7f6a; --line:#eadfc4; --ok:#3d7a3f;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  body{background:var(--bg);color:var(--ink);font-family:"Microsoft YaHei","PingFang SC",-apple-system,sans-serif;line-height:1.7}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:"Microsoft YaHei","PingFang SC",-apple-system,sans-serif;line-height:1.7;overflow-x:hidden}
   .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
 
-  /* Hero */
-  header{padding:72px 0 50px;text-align:center;
+  /* ---------- 顶部导航 ---------- */
+  nav{position:sticky;top:0;z-index:50;background:rgba(250,246,238,.92);backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;gap:16px;height:56px}
+  nav .brand{font-weight:800;font-size:16px;background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  nav a.nl{font-size:13.5px;color:#6b5510;text-decoration:none;padding:6px 14px;border-radius:99px}
+  nav a.nl:hover{background:#f7efda}
+  nav .spacer{flex:1}
+  nav .gh{font-size:13px;font-weight:700;color:#fff;background:var(--gold-grad);border-radius:99px;padding:7px 18px;text-decoration:none}
+
+  /* ---------- Hero ---------- */
+  header{position:relative;padding:84px 0 60px;text-align:center;overflow:hidden;
     background:
       radial-gradient(1100px 460px at 18% -10%, #f7ecc9 0%, transparent 60%),
       radial-gradient(880px 380px at 88% 108%, #f3e6bd 0%, transparent 55%),
       var(--bg);}
-  header h1{font-size:40px;font-weight:800;letter-spacing:2px;
+  .deco{position:absolute;border-radius:50%;pointer-events:none;opacity:.5}
+  .d1{width:300px;height:300px;border:2px dashed #e2cf8f;top:-90px;left:-70px;animation:spin 40s linear infinite}
+  .d2{width:200px;height:200px;border:2px solid #f0e2b4;bottom:-40px;right:-50px;animation:spin 30s linear infinite reverse}
+  .d3{width:14px;height:14px;background:var(--gold);top:120px;right:16%;animation:float 5s ease-in-out infinite}
+  .d4{width:9px;height:9px;background:#d9b948;bottom:90px;left:14%;animation:float 6s ease-in-out 1s infinite}
+  .d5{width:7px;height:7px;background:#e6c96a;top:70px;left:30%;animation:float 7s ease-in-out .5s infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
+  header .kicker{display:inline-block;font-size:12px;letter-spacing:3px;color:var(--gold-deep);
+    border:1px solid var(--gold);border-radius:99px;padding:4px 16px;margin-bottom:18px;background:#fffdf4}
+  header h1{font-size:42px;font-weight:800;letter-spacing:2px;
     background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-  header .en{font-size:14px;color:var(--muted);letter-spacing:5px;margin-top:6px;text-transform:uppercase}
-  header p.lead{max-width:640px;margin:18px auto 0;color:#5c5342;font-size:15px}
-  .stats{display:flex;justify-content:center;gap:14px;margin-top:26px;flex-wrap:wrap}
-  .stat{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 22px;text-align:center}
-  .stat b{display:block;font-size:22px;color:var(--gold-deep)}
+  header .en{font-size:13px;color:var(--muted);letter-spacing:5px;margin-top:8px;text-transform:uppercase}
+  header p.lead{max-width:660px;margin:20px auto 0;color:#5c5342;font-size:15px}
+  .stats{display:flex;justify-content:center;gap:14px;margin-top:30px;flex-wrap:wrap}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px 26px;text-align:center;
+    box-shadow:0 2px 10px rgba(160,126,20,.07);transition:transform .2s}
+  .stat:hover{transform:translateY(-3px)}
+  .stat b{display:block;font-size:24px;color:var(--gold-deep)}
   .stat span{font-size:12px;color:var(--muted)}
-  .gh-hero{display:inline-block;margin-top:26px;font-size:14px;font-weight:700;color:#fff;
-    background:var(--gold-grad);border-radius:10px;padding:11px 26px;text-decoration:none}
-  .gh-hero:hover{filter:brightness(1.07)}
+  .hero-btns{margin-top:28px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+  .gh-hero{font-size:14px;font-weight:700;color:#fff;background:var(--gold-grad);border-radius:10px;
+    padding:12px 28px;text-decoration:none;box-shadow:0 4px 14px rgba(160,126,20,.3)}
+  .gh-hero:hover{filter:brightness(1.07);transform:translateY(-1px)}
+  .ghost{font-size:14px;font-weight:700;color:var(--gold-deep);background:#fff;border:1.5px solid var(--gold);
+    border-radius:10px;padding:12px 28px;text-decoration:none}
+  .ghost:hover{background:#fbf6e7}
 
-  /* 项目卡片 */
-  .section-title{font-size:22px;font-weight:800;margin:44px 0 6px}
-  .section-sub{font-size:13px;color:var(--muted);margin-bottom:22px}
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px;padding-bottom:20px}
-  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px 26px;
-    box-shadow:0 2px 10px rgba(160,126,20,.06);transition:transform .15s, box-shadow .15s;display:flex;flex-direction:column}
-  .card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(160,126,20,.16)}
+  /* ---------- 项目卡片 ---------- */
+  .section-title{font-size:24px;font-weight:800;margin:50px 0 6px;display:flex;align-items:center;gap:10px}
+  .section-title::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--gold),transparent)}
+  .section-sub{font-size:13px;color:var(--muted);margin-bottom:24px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px;padding-bottom:10px}
+  .card{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px 26px 22px;
+    box-shadow:0 2px 10px rgba(160,126,20,.06);transition:transform .18s, box-shadow .18s;display:flex;flex-direction:column;
+    opacity:0;transform:translateY(18px);animation:rise .6s ease forwards}
+  .card:nth-child(1){animation-delay:.05s}.card:nth-child(2){animation-delay:.12s}.card:nth-child(3){animation-delay:.19s}
+  .card:nth-child(4){animation-delay:.26s}.card:nth-child(5){animation-delay:.33s}.card:nth-child(6){animation-delay:.40s}
+  .card:nth-child(7){animation-delay:.47s}
+  @keyframes rise{to{opacity:1;transform:translateY(0)}}
+  .card::before{content:"";position:absolute;inset:0;border-radius:16px;padding:1.5px;
+    background:linear-gradient(135deg,#e6c96a,#a07e14,#f3e2a8);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+    -webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .2s;pointer-events:none}
+  .card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(160,126,20,.18)}
+  .card:hover::before{opacity:1}
   .card .top{display:flex;align-items:center;gap:12px;margin-bottom:10px}
-  .card .num{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:9px;
-    background:var(--gold-grad);color:#fff;font-weight:800;font-size:15px;flex-shrink:0}
-  .card h3{font-size:16px;font-weight:700}
+  .card .num{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:10px;
+    background:var(--gold-grad);color:#fff;font-weight:800;font-size:16px;flex-shrink:0;box-shadow:0 3px 8px rgba(160,126,20,.3)}
+  .card h3{font-size:16.5px;font-weight:700}
   .card .desc{font-size:13px;color:#5c5342;flex:1}
-  .stack{margin:12px 0 16px;display:flex;flex-wrap:wrap;gap:6px}
+  .metric{display:flex;gap:8px;margin:12px 0 4px;flex-wrap:wrap}
+  .metric b{font-size:12px;color:var(--gold-deep);background:#fbf6e7;border:1px dashed var(--gold);
+    border-radius:8px;padding:2px 10px;font-weight:700}
+  .stack{margin:10px 0 16px;display:flex;flex-wrap:wrap;gap:6px}
   .stack span{font-size:11px;background:#f7efda;color:var(--gold-deep);border:1px solid var(--line);
     border-radius:6px;padding:2px 9px}
   .btns{display:flex;gap:8px;margin-top:auto}
@@ -56,51 +96,73 @@
   .btn-code:hover{background:#fbf6e7}
   .btn-off{color:var(--muted);background:#f1ecdf;border:1px solid var(--line);cursor:default}
 
-  /* 技术条 */
-  .techbar{margin:16px 0 50px;background:var(--panel);border:1px solid var(--line);border-radius:14px;
-    padding:20px 26px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
-  .techbar .lbl{font-size:13px;font-weight:700;color:var(--gold-deep);margin-right:4px}
+  /* ---------- 能力条 ---------- */
+  .techbar{margin:20px 0 56px;background:var(--panel);border:1px solid var(--line);border-radius:16px;
+    padding:22px 28px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;box-shadow:0 2px 10px rgba(160,126,20,.06)}
+  .techbar .lbl{font-size:13px;font-weight:800;color:var(--gold-deep);margin-right:4px}
   .techbar span.t{font-size:12.5px;background:#f7efda;border:1px solid var(--line);color:#6b5510;
-    border-radius:99px;padding:4px 14px}
+    border-radius:99px;padding:4px 14px;transition:all .15s}
+  .techbar span.t:hover{background:var(--gold-grad);color:#fff;border-color:transparent}
 
-  footer{text-align:center;color:var(--muted);font-size:12.5px;padding:30px 0 44px;border-top:1px solid var(--line)}
+  footer{text-align:center;color:var(--muted);font-size:12.5px;padding:32px 0 46px;border-top:1px solid var(--line)}
+  footer .fb{margin-top:8px;display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
+  footer .fb span{font-size:11px;background:#f7efda;border:1px solid var(--line);color:var(--gold-deep);border-radius:99px;padding:3px 12px}
   @media (max-width:640px){ header h1{font-size:30px} }
 </style>
 </head>
 <body>
 
-<header>
+<nav>
   <div class="wrap">
+    <span class="brand">🥔 AI 应用项目集</span>
+    <a class="nl" href="#projects">项目列表</a>
+    <a class="nl" href="#stack">技术栈</a>
+    <span class="spacer"></span>
+    <a class="gh" href="https://github.com/itzmy-web" target="_blank" rel="noopener">GitHub ↗</a>
+  </div>
+</nav>
+
+<header>
+  <span class="deco d1"></span><span class="deco d2"></span>
+  <span class="deco d3"></span><span class="deco d4"></span><span class="deco d5"></span>
+  <div class="wrap">
+    <div class="kicker">FULL-STACK AI DEVELOPER</div>
     <h1>AI 应用项目集</h1>
-    <div class="en">itzmy-web · Full-Stack AI Portfolio</div>
-    <p class="lead">7 个从 0 到 1 独立设计、开发并公网上线的全栈 AI 应用 —— 覆盖 NL2SQL 问数、领域智能体、智能客服、RAG 知识库、风险自检等真实业务场景。</p>
+    <div class="en">itzmy-web · Portfolio 2026</div>
+    <p class="lead">7 个从 0 到 1 独立设计、开发并公网上线的全栈 AI 应用 —— 覆盖 NL2SQL 问数、领域智能体、智能客服、RAG 知识库、风险自检等真实业务场景，<b>全部可在线体验</b>。</p>
     <div class="stats">
       <div class="stat"><b>7</b><span>独立项目</span></div>
+      <div class="stat"><b>7 / 7</b><span>在线可演示</span></div>
       <div class="stat"><b>10+</b><span>核心 AI 技术</span></div>
-      <div class="stat"><b>6</b><span>在线可演示</span></div>
+      <div class="stat"><b>100%</b><span>独立完成</span></div>
     </div>
-    <a class="gh-hero" href="https://github.com/itzmy-web?tab=repositories" target="_blank" rel="noopener">⭐ GitHub 全部仓库</a>
+    <div class="hero-btns">
+      <a class="gh-hero" href="#projects">浏览项目 ↓</a>
+      <a class="ghost" href="https://github.com/itzmy-web?tab=repositories" target="_blank" rel="noopener">⭐ GitHub 全部仓库</a>
+    </div>
   </div>
 </header>
 
-<div class="wrap">
+<div class="wrap" id="projects">
   <div class="section-title">项目列表</div>
-  <div class="section-sub">编号即仓库命名 · 每个项目含源码仓库，标注「在线演示」的可直接体验</div>
+  <div class="section-sub">编号即仓库命名 · 每个项目均可在线演示 + 查看源码</div>
   <div class="grid">
 
     <div class="card">
       <div class="top"><span class="num">1</span><h3>合同核查审计 AI</h3></div>
       <p class="desc">合同条款智能核查与审计辅助系统：条款风险识别、批量审查、审计留痕，帮助快速定位合同问题。</p>
-      <div class="stack"><span>FastAPI</span><span>文档解析</span><span>LLM 审查</span></div>
+      <div class="metric"><b>条款级审查</b><b>审计留痕</b><b>OCR 兜底</b></div>
+      <div class="stack"><span>FastAPI</span><span>文档解析</span><span>LLM 审查</span><span>SMTP 告警</span></div>
       <div class="btns">
-        <a class="btn btn-demo" href="https://contract-review-ai-83502.app.workbuddy.host/" target="_blank" rel="noopener">在线演示 ↗</a>
+        <a class="btn btn-demo" href="https://contract-review-ai.app.workbuddy.host/" target="_blank" rel="noopener">在线演示 ↗</a>
         <a class="btn btn-code" href="https://github.com/itzmy-web/-1.contract-review-ai" target="_blank" rel="noopener">源码 ↗</a>
       </div>
     </div>
 
     <div class="card">
       <div class="top"><span class="num">2</span><h3>企业问题自检平台</h3></div>
-      <p class="desc">文档导入 → AI 抽题 → 翻卡自检 → 薄弱汇总的闭环平台，内置 SRS 间隔重复复习，26 项功能 · 297 项回归全绿。</p>
+      <p class="desc">文档导入 → AI 抽题 → 翻卡自检 → 薄弱汇总的闭环平台，内置 SRS 间隔重复复习与风险报告。</p>
+      <div class="metric"><b>26 项功能</b><b>297 项回归全绿</b><b>外部评审 8.6/10</b></div>
       <div class="stack"><span>FastAPI</span><span>SQLite</span><span>Vanilla JS</span><span>SRS</span></div>
       <div class="btns">
         <a class="btn btn-demo" href="https://question-self-check.app.workbuddy.host/" target="_blank" rel="noopener">在线演示 ↗</a>
@@ -110,17 +172,19 @@
 
     <div class="card">
       <div class="top"><span class="num">3</span><h3>RAG 智能智库</h3></div>
-      <p class="desc">企业知识库问答（云端完整版）：文档入库 → 五节点导入管线 → 向量检索 → 流式回答带引用溯源，BGE-M3 语义分块 + 余弦召回。</p>
-      <div class="stack"><span>RAG</span><span>向量检索</span><span>SSE 流式</span><span>引用溯源</span></div>
+      <p class="desc">企业知识库问答：文档入库 → 向量检索 → 引用溯源回答，全套私有化部署与权限审计。</p>
+      <div class="metric"><b>引用溯源</b><b>私有化部署</b><b>多格式入库</b></div>
+      <div class="stack"><span>RAG</span><span>Milvus</span><span>MongoDB</span><span>MinIO</span></div>
       <div class="btns">
-        <a class="btn btn-demo" href="https://zhiku-knowledge-base-01596.app.workbuddy.host/" target="_blank" rel="noopener">在线演示 ↗</a>
+        <a class="btn btn-demo" href="https://zhiku-knowledge-base.app.workbuddy.host/" target="_blank" rel="noopener">在线演示 ↗</a>
         <a class="btn btn-code" href="https://github.com/itzmy-web/3.zhiku-knowledge-demo" target="_blank" rel="noopener">源码 ↗</a>
       </div>
     </div>
 
     <div class="card">
       <div class="top"><span class="num">4</span><h3>问数 ChatBI（NL2SQL）</h3></div>
-      <p class="desc">自然语言直达数据查询：LangGraph 12 节点 Text2SQL Agent + SSE 流式回答，schema 联动与 SQL 生成质量优化。</p>
+      <p class="desc">自然语言直达数据查询：Text2SQL Agent + SSE 流式回答，schema 联动与 SQL 生成质量优化。</p>
+      <div class="metric"><b>12 节点 Agent</b><b>SSE 流式</b><b>词汇向量召回</b></div>
       <div class="stack"><span>LangGraph</span><span>Text2SQL</span><span>FastAPI SSE</span><span>SQLite</span></div>
       <div class="btns">
         <a class="btn btn-demo" href="https://wenshu-chatbi-cloud.app.workbuddy.host/" target="_blank" rel="noopener">在线演示 ↗</a>
@@ -131,6 +195,7 @@
     <div class="card">
       <div class="top"><span class="num">5</span><h3>电商小二 · 智能客服</h3></div>
       <p class="desc">三轨对话引擎（任务 / 知识 / 闲聊）+ 数字人形象 + 扫码登录 + 评价看板，会话状态全链路持久化。</p>
+      <div class="metric"><b>三轨对话</b><b>数字人</b><b>12 个 Flow</b></div>
       <div class="stack"><span>FastAPI</span><span>LangChain</span><span>数字人</span><span>MySQL</span></div>
       <div class="btns">
         <a class="btn btn-demo" href="https://dianshang-xiaoer-cs.app.workbuddy.host/" target="_blank" rel="noopener">在线演示 ↗</a>
@@ -140,27 +205,29 @@
 
     <div class="card">
       <div class="top"><span class="num">6</span><h3>罗盘 · 医药智能体</h3></div>
-      <p class="desc">医药领域 DeepAgents 多智能体：主代理调度 RAG 检索 / 数据库问答 / 联网搜索三子代理，药品·库存·销售分析 + 报告生成，多链路 LLM 容灾。</p>
+      <p class="desc">医药领域 DeepAgents 智能体：药品 / 库存 / 销售数据问答 + 联网搜索 + RAG 检索增强，多链路 LLM 容灾。</p>
+      <div class="metric"><b>DeepAgents</b><b>多 LLM 容灾</b><b>RAGFlow</b></div>
       <div class="stack"><span>DeepAgents</span><span>MySQL</span><span>Tavily</span><span>RAGFlow</span></div>
       <div class="btns">
-        <a class="btn btn-demo" href="https://compass-pharma-cloud.app.workbuddy.host/" target="_blank" rel="noopener">在线演示 ↗</a>
+        <a class="btn btn-demo" href="https://compass-pharma-agent.app.workbuddy.host/" target="_blank" rel="noopener">在线演示 ↗</a>
         <a class="btn btn-code" href="https://github.com/itzmy-web/6.compass-pharma-cloud" target="_blank" rel="noopener">源码 ↗</a>
       </div>
     </div>
 
     <div class="card">
       <div class="top"><span class="num">7</span><h3>AI 电商运营助手</h3></div>
-      <p class="desc">多 Agent 电商运营工作台：LangGraph 编排 + Celery 异步任务 + 数据看板，Next.js 前端 + checkpoint 持久化。</p>
+      <p class="desc">多 Agent 电商运营工作台：LangGraph 编排 + Celery 异步任务 + 数据看板，checkpoint 状态持久化。</p>
+      <div class="metric"><b>多 Agent 编排</b><b>异步任务</b><b>数据看板</b></div>
       <div class="stack"><span>Next.js</span><span>Celery</span><span>LangGraph</span><span>PostgreSQL</span></div>
       <div class="btns">
-        <a class="btn btn-demo" href="https://2110260807229337600.app.workbuddy.host/" target="_blank" rel="noopener">在线演示 ↗</a>
+        <a class="btn btn-demo" href="https://ecommerce-assistant-demo.app.workbuddy.host/" target="_blank" rel="noopener">在线演示 ↗</a>
         <a class="btn btn-code" href="https://github.com/itzmy-web/7.ecommerce-assistant-demo.app" target="_blank" rel="noopener">源码 ↗</a>
       </div>
     </div>
 
   </div>
 
-  <div class="techbar">
+  <div class="techbar" id="stack">
     <span class="lbl">技术栈总览</span>
     <span class="t">Python / FastAPI</span><span class="t">LangGraph / DeepAgents</span><span class="t">LangChain</span>
     <span class="t">RAG / Milvus / ES</span><span class="t">Text2SQL</span><span class="t">MySQL / PostgreSQL / SQLite</span>
@@ -170,6 +237,9 @@
 
 <footer>
   itzmy-web · AI 应用开发者 · 7 个项目均独立完成设计 / 开发 / 部署 · 2026
+  <div class="fb">
+    <span>LangGraph</span><span>RAG</span><span>NL2SQL</span><span>Agent 编排</span><span>全栈部署</span>
+  </div>
 </footer>
 
 </body>
