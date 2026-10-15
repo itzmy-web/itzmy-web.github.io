@@ -175,6 +175,7 @@
     <a class="nl" href="#projects">项目列表</a>
     <a class="nl" href="#stack">技术栈</a>
     <a class="nl" href="#why">项目特色</a>
+    <a class="nl" href="#arch">部署架构</a>
     <a class="nl" href="https://itzmy-web.github.io/ai-suites/" target="_blank" rel="noopener">🏛️ 行业模板集 ↗</a>
     <span class="spacer"></span>
     <a class="gh" href="https://github.com/itzmy-web" target="_blank" rel="noopener">GitHub ↗</a>
@@ -321,6 +322,77 @@
       <h4>工程化闭环</h4>
       <p>回归测试、外部评审打分、SRS 记忆算法、审计留痕 —— 用产品思维而非脚本思维做 AI 应用。</p>
     </div>
+  </div>
+</div>
+
+<!-- 部署架构 -->
+<div class="wrap" id="arch" style="margin-top:20px">
+  <div class="section-title reveal"><span class="sq"></span>部署架构</div>
+  <div class="section-sub reveal">单台阿里云 ECS（Ubuntu 22.04，2 vCPU / 1.7G 内存 / 4G swap）以 systemd 托管 7 个全栈项目 + MySQL 8.0 + 商城 Mock 后端，全部公网可访问、开机自启、崩溃自动重启。</div>
+  <div class="reveal" style="background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:0 3px 14px rgba(160,126,20,.07)">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" style="width:100%;height:auto;display:block" font-family="-apple-system,Segoe UI,Microsoft YaHei,sans-serif">
+      <rect width="960" height="600" fill="#ffffff"/>
+      <text x="32" y="42" font-size="26" font-weight="700" fill="#1a365d">云端全栈作品集 · 部署架构图</text>
+      <text x="32" y="66" font-size="13" fill="#718096">阿里云 ECS（Ubuntu 22.04，2 vCPU / 1.7G 内存 / 4G swap）单实例托管 7 个项目 + MySQL + 商城 Mock 后端</text>
+      <rect x="40" y="110" width="150" height="78" rx="14" fill="#fffaf0" stroke="#dd6b20" stroke-width="2"/>
+      <text x="115" y="143" font-size="16" font-weight="600" fill="#7b341e" text-anchor="middle">用户 / 浏览器</text>
+      <text x="115" y="167" font-size="12" fill="#9c4221" text-anchor="middle">公网访问 8081–8090</text>
+      <line x1="190" y1="149" x2="298" y2="149" stroke="#4a5568" stroke-width="2" marker-end="url(#arrow)"/>
+      <rect x="300" y="92" width="600" height="470" rx="16" fill="#f7fafc" stroke="#2b6cb0" stroke-width="2.5"/>
+      <text x="322" y="120" font-size="15" font-weight="700" fill="#2b6cb0">阿里云 ECS · systemd 托管（开机自启 / 崩溃重启 / 内存隔离）</text>
+      <rect x="324" y="140" width="132" height="74" rx="10" fill="#ebf8ff" stroke="#3182ce" stroke-width="1.5"/>
+      <text x="390" y="172" font-size="13" font-weight="600" fill="#1a365d" text-anchor="middle">问题自检</text>
+      <text x="390" y="193" font-size="12" fill="#2c5282" text-anchor="middle">:8081 · FastAPI</text>
+      <rect x="476" y="140" width="132" height="74" rx="10" fill="#ebf8ff" stroke="#3182ce" stroke-width="1.5"/>
+      <text x="542" y="172" font-size="13" font-weight="600" fill="#1a365d" text-anchor="middle">问数 ChatBI</text>
+      <text x="542" y="193" font-size="12" fill="#2c5282" text-anchor="middle">:8082 · LangGraph</text>
+      <rect x="628" y="140" width="132" height="74" rx="10" fill="#ebf8ff" stroke="#3182ce" stroke-width="1.5"/>
+      <text x="694" y="172" font-size="13" font-weight="600" fill="#1a365d" text-anchor="middle">电商小二</text>
+      <text x="694" y="193" font-size="12" fill="#2c5282" text-anchor="middle">:8083 · Agent</text>
+      <rect x="780" y="140" width="104" height="74" rx="10" fill="#ebf8ff" stroke="#3182ce" stroke-width="1.5"/>
+      <text x="832" y="172" font-size="13" font-weight="600" fill="#1a365d" text-anchor="middle">罗盘</text>
+      <text x="832" y="193" font-size="12" fill="#2c5282" text-anchor="middle">:8084</text>
+      <rect x="324" y="232" width="132" height="74" rx="10" fill="#ebf8ff" stroke="#3182ce" stroke-width="1.5"/>
+      <text x="390" y="264" font-size="13" font-weight="600" fill="#1a365d" text-anchor="middle">掌柜智库</text>
+      <text x="390" y="285" font-size="12" fill="#2c5282" text-anchor="middle">:8085 · RAG</text>
+      <rect x="476" y="232" width="132" height="74" rx="10" fill="#ebf8ff" stroke="#3182ce" stroke-width="1.5"/>
+      <text x="542" y="264" font-size="13" font-weight="600" fill="#1a365d" text-anchor="middle">智能客服</text>
+      <text x="542" y="285" font-size="12" fill="#2c5282" text-anchor="middle">:8086 · MySQL</text>
+      <rect x="628" y="232" width="132" height="74" rx="10" fill="#ebf8ff" stroke="#3182ce" stroke-width="1.5"/>
+      <text x="694" y="264" font-size="13" font-weight="600" fill="#1a365d" text-anchor="middle">电商运营助手</text>
+      <text x="694" y="285" font-size="12" fill="#2c5282" text-anchor="middle">:8087 · Next.js</text>
+      <rect x="780" y="232" width="104" height="74" rx="10" fill="#ebf8ff" stroke="#3182ce" stroke-width="1.5"/>
+      <text x="832" y="264" font-size="13" font-weight="600" fill="#1a365d" text-anchor="middle">SSH</text>
+      <text x="832" y="285" font-size="12" fill="#2c5282" text-anchor="middle">:22 密钥登录</text>
+      <rect x="324" y="330" width="560" height="96" rx="12" fill="#f0fff4" stroke="#38a169" stroke-width="1.5"/>
+      <text x="344" y="354" font-size="13" font-weight="700" fill="#22543d">内网依赖（仅 127.0.0.1，不对公网开放）</text>
+      <rect x="344" y="366" width="250" height="46" rx="8" fill="#ffffff" stroke="#38a169" stroke-width="1.2"/>
+      <text x="469" y="388" font-size="12" fill="#22543d" text-anchor="middle">MySQL 8.0 原生</text>
+      <text x="469" y="404" font-size="11" fill="#2f855a" text-anchor="middle">customer_service / commerce 库</text>
+      <rect x="614" y="366" width="250" height="46" rx="8" fill="#ffffff" stroke="#38a169" stroke-width="1.2"/>
+      <text x="739" y="388" font-size="12" fill="#22543d" text-anchor="middle">商城 Mock 后端</text>
+      <text x="739" y="404" font-size="11" fill="#2f855a" text-anchor="middle">:18081 · 用户/商品/订单</text>
+      <line x1="542" y1="306" x2="739" y2="366" stroke="#38a169" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#arrowG)"/>
+      <text x="640" y="332" font-size="10" fill="#2f855a" transform="rotate(18 640 332)">调用</text>
+      <rect x="760" y="430" width="180" height="110" rx="14" fill="#fffaf0" stroke="#dd6b20" stroke-width="2"/>
+      <text x="850" y="458" font-size="13" font-weight="700" fill="#7b341e" text-anchor="middle">外部 AI 能力</text>
+      <text x="850" y="482" font-size="11" fill="#9c4221" text-anchor="middle">SiliconFlow Qwen3.8-27B</text>
+      <text x="850" y="500" font-size="11" fill="#9c4221" text-anchor="middle">Qwen3-VL-30B-A3B</text>
+      <text x="850" y="518" font-size="11" fill="#9c4221" text-anchor="middle">Tavily 网络搜索</text>
+      <line x1="780" y1="466" x2="760" y2="470" stroke="#dd6b20" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arrowO)"/>
+      <line x1="694" y1="380" x2="780" y2="455" stroke="#dd6b20" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arrowO)"/>
+      <rect x="40" y="430" width="22" height="14" rx="3" fill="#ebf8ff" stroke="#3182ce" stroke-width="1.2"/>
+      <text x="70" y="442" font-size="12" fill="#4a5568">业务服务（公网）</text>
+      <rect x="40" y="456" width="22" height="14" rx="3" fill="#f0fff4" stroke="#38a169" stroke-width="1.2"/>
+      <text x="70" y="468" font-size="12" fill="#4a5568">数据/内网依赖</text>
+      <rect x="40" y="482" width="22" height="14" rx="3" fill="#fffaf0" stroke="#dd6b20" stroke-width="1.2"/>
+      <text x="70" y="494" font-size="12" fill="#4a5568">外部 LLM / 搜索</text>
+      <defs>
+        <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#4a5568"/></marker>
+        <marker id="arrowG" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#38a169"/></marker>
+        <marker id="arrowO" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#dd6b20"/></marker>
+      </defs>
+    </svg>
   </div>
 </div>
 
