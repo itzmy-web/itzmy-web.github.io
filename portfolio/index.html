@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>郑孟瑶的个人作品集 | AI 应用开发之路</title>
+  <meta name="description" content="郑孟瑶的个人作品集：AI 应用工程师 · 大模型应用方向。RAG 智能智库、AI 客服管家、电商运营助手、合同智审、医药智能体等 8 个上线项目，覆盖 RAG / Agent 编排 / 多模态 / Text2SQL 全链路。">
+  <link rel="stylesheet" href="https://fonts.loli.net/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+  <!-- ===== 移动端菜单按钮 ===== -->
+  <button class="menu-btn glass-card" id="menuBtn" aria-label="菜单">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+  </button>
+
+  <!-- ===== 左侧玻璃侧边栏（参考站 fixed w-64 glass-nav）===== -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <h1 class="sidebar-logo">郑孟瑶</h1>
+      <p class="sidebar-tag">AI 应用工程师 · 大模型应用方向</p>
+    </div>
+    <nav class="sidebar-nav">
+      <ul>
+        <li><a href="#home" class="nav-item active">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+          <span>首页</span></a></li>
+        <li><a href="#projects" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>
+          <span>项目作品</span></a></li>
+        <li><a href="#stack" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
+          <span>技术栈</span></a></li>
+        <li><a href="#tools" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          <span>AI 工具</span></a></li>
+        <li><a href="#services" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>
+          <span>项目服务</span></a></li>
+        <li><a href="#journey" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          <span>学习历程</span></a></li>
+      </ul>
+      <a class="nav-resume" href="resume.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+        <span>查看简历</span>
+      </a>
+      <a class="nav-resume" href="https://github.com/itzmy-web" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.17c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.72-1.54-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.76.11 3.05.73.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.25 5.66.41.35.77 1.05.77 2.12v3.14c0 .3.21.67.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+        <span>GitHub 主页</span>
+      </a>
+    </nav>
+    <div class="sidebar-foot">© 2026 郑孟瑶 · 保留所有权利</div>
+  </aside>
+
+  <!-- ===== 主内容区 ===== -->
+  <main class="main">
+    <div class="page-bg"></div>
+    <div class="page-orbs">
+      <span class="page-orb orb-a"></span>
+      <span class="page-orb orb-b"></span>
+      <span class="page-orb orb-c"></span>
+    </div>
+
+    <!-- ===== Hero ===== -->
+    <section class="hero" id="home">
+      <div class="hero-inner">
+        <p class="hero-badge reveal">PERSONAL PORTFOLIO · AI 应用方向</p>
+        <h1 class="hero-title reveal">AI 应用<span class="grad-text">开发之路</span> – 郑孟瑶</h1>
+        <h3 class="hero-sub reveal">AI 应用工程师 &amp; 全栈开发者</h3>
+        <p class="hero-desc reveal">1.5 年大模型应用开发经验，专注 AI 应用落地与全栈开发，8 个上线项目全部可演示，覆盖 RAG / Agent 编排 / 多模态 / Text2SQL 全链路。</p>
+        <div class="hero-cta reveal">
+          <a class="btn btn-primary" href="https://wx.mail.qq.com/" target="_blank" rel="noopener">一起交流讨论 💬</a>
+          <a class="btn btn-outline" href="#projects">探索实战案例</a>
+          <a class="btn btn-outline" href="https://github.com/itzmy-web" target="_blank" rel="noopener">GitHub 主页</a>
+        </div>
+        <div class="hero-stats reveal">
+          <div class="glass-ultra stat-card"><b>8+</b><span>实战项目</span></div>
+          <div class="glass-ultra stat-card"><b>36+</b><span>API 接口</span></div>
+          <div class="glass-ultra stat-card"><b>100%</b><span>功能可演示</span></div>
+          <div class="glass-ultra stat-card"><b>24h</b><span>响应反馈</span></div>
+        </div>
+        <div class="hero-tools reveal">
+          <h4>开发路上的得力工具 🛠️</h4>
+          <p>每个工具背后都有选型的故事和踩坑的经历</p>
+          <div class="tool-chips">
+            <span class="glass-card chip">Python</span><span class="glass-card chip">FastAPI</span>
+            <span class="glass-card chip">LangGraph</span><span class="glass-card chip">DeepAgents</span>
+            <span class="glass-card chip">Next.js</span><span class="glass-card chip">Vue</span>
+            <span class="glass-card chip">React</span><span class="glass-card chip">OpenAI</span>
+            <span class="glass-card chip">Claude</span><span class="glass-card chip">Docker</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 项目作品集 ===== -->
+    <section class="section" id="projects">
+      <div class="section-inner">
+        <div class="sec-head reveal">
+          <h2>项目作品<span class="grad-text">集</span></h2>
+          <p>我在 AI 应用开发、Web 技术和工具创建方面的实践成果</p>
+        </div>
+        <div class="filter-tabs reveal">
+          <button class="filter-tab active" data-filter="all">全部</button>
+          <button class="filter-tab" data-filter="ai">AI 应用</button>
+          <button class="filter-tab" data-filter="web">Web 应用</button>
+        </div>
+        <div class="project-grid">
+          <article class="glass-ultra project-card reveal" data-cat="ai">
+            <div class="p-cover">
+              <img src="assets/covers/RAG 智能智库.svg" alt="灵犀 · RAG 智能智库" loading="lazy">
+            </div>
+            <div class="p-body">
+              <h3>灵犀 · RAG 智能智库</h3>
+              <p>文档上传与文本入库、自动分块、FTS5 全文检索、带引用问答；支持 LLM 增强与无 Key 演示双模式，中文二元分词优化检索命中率。</p>
+              <div class="p-tags"><span>RAG</span><span>FTS5</span><span>SQLite</span><span>LLM</span></div>
+              <div class="p-actions">
+                <a class="p-btn primary" href="https://fusion-workbench-confirm.app.workbuddy.host/#kb" target="_blank" rel="noopener">查看项目</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="glass-ultra project-card reveal" data-cat="ai">
+            <div class="p-cover">
+              <img src="assets/covers/电商小二 · 智能客服.svg" alt="电商小二 · AI 客服管家" loading="lazy">
+            </div>
+            <div class="p-body">
+              <h3>电商小二 · AI 客服管家</h3>
+              <p>三轨对话引擎（task / knowledge / chitchat），6 个对话 flow 配置驱动，LLM 意图路由叠加防幻觉白名单校验，会话状态 SQLite 持久化，支持演示订单全流程。</p>
+              <div class="p-tags"><span>对话引擎</span><span>SQLite</span><span>LLM</span><span>意图路由</span></div>
+              <div class="p-actions">
+                <a class="p-btn primary" href="https://dianshang-xiaoer-cs.app.workbuddy.host/" target="_blank" rel="noopener">查看项目</a>
+                <a class="p-btn ghost" href="https://github.com/itzmy-web/5.dianshang-xiaoer-cs.app" target="_blank" rel="noopener">源码</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="glass-ultra project-card reveal" data-cat="web">
+            <div class="p-cover">
+              <img src="assets/covers/AI 电商运营助手.svg" alt="驾驶舱 · AI 电商运营助手" loading="lazy">
+            </div>
+            <div class="p-body">
+              <h3>驾驶舱 · AI 电商运营助手</h3>
+              <p>商品与店铺管理、经营数据看板、4 个预置 Agent 分步执行与工作流编排；原项目采用 FastAPI + Celery + LangGraph + Next.js 架构，此处为融合工作台·运营模块。</p>
+              <div class="p-tags"><span>FastAPI</span><span>Celery</span><span>LangGraph</span><span>Next.js</span></div>
+              <div class="p-actions">
+                <a class="p-btn primary" href="https://fusion-workbench-confirm.app.workbuddy.host/#ops" target="_blank" rel="noopener">查看项目</a>
+                <a class="p-btn ghost" href="https://github.com/itzmy-web/7.ecommerce-assistant-demo.app" target="_blank" rel="noopener">源码</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="glass-ultra project-card reveal" data-cat="ai">
+            <div class="p-cover">
+              <img src="assets/covers/AI 合同审批.svg" alt="法眼 · AI 合同智审平台" loading="lazy">
+            </div>
+            <div class="p-body">
+              <h3>法眼 · AI 合同智审平台</h3>
+              <p>数据驱动规则引擎（keyword / regex / absence / custom 四种模式、11 条内置规则）叠加 LLM 语义研判，支持审批决定、回写评论、Markdown 导出与全程审计日志。</p>
+              <div class="p-tags"><span>规则引擎</span><span>LLM</span><span>FastAPI</span><span>SQLite</span></div>
+              <div class="p-actions">
+                <a class="p-btn primary" href="https://fusion-workbench-confirm.app.workbuddy.host/#contract" target="_blank" rel="noopener">查看项目</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="glass-ultra project-card reveal" data-cat="ai">
+            <div class="p-cover">
+              <img src="assets/covers/罗盘医药智能体.svg" alt="罗盘 · 医药智能体" loading="lazy">
+            </div>
+            <div class="p-body">
+              <h3>罗盘 · 医药智能体</h3>
+              <p>基于 DeepAgents / LangGraph 的医药行业智能体：对接 MySQL 药品 / 库存 / 销售数据库，RAGFlow 知识检索 + Tavily 联网搜索，LLM 多链路故障自动降级。</p>
+              <div class="p-tags"><span>DeepAgents</span><span>LangGraph</span><span>MySQL</span><span>RAG</span></div>
+              <div class="p-actions">
+                <a class="p-btn primary" href="https://compass-pharma-agent.app.workbuddy.host/" target="_blank" rel="noopener">查看项目</a>
+                <a class="p-btn ghost" href="https://github.com/itzmy-web/6.compass-pharma-cloud" target="_blank" rel="noopener">源码</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="glass-ultra project-card reveal" data-cat="ai">
+            <div class="p-cover">
+              <img src="assets/covers/问数 ChatBI.svg" alt="问数 ChatBI · 智能问数平台" loading="lazy">
+            </div>
+            <div class="p-body">
+              <h3>问数 ChatBI · 智能问数平台</h3>
+              <p>12 节点 LangGraph Text2SQL Agent：自然语言问数 → schema linking → SQL 生成 → 校验 → 执行 → 流式总结；Qdrant + Elasticsearch 双索引 + bge embedding，FastAPI SSE 流式输出。</p>
+              <div class="p-tags"><span>LangGraph</span><span>Text2SQL</span><span>Qdrant</span><span>Elasticsearch</span></div>
+              <div class="p-actions">
+                <span class="p-btn ghost p-btn-disabled">演示整理中</span>
+                <a class="p-btn ghost" href="https://github.com/itzmy-web/4.wenshu-chatbi-cloud.app" target="_blank" rel="noopener">源码</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="glass-ultra project-card reveal" data-cat="ai">
+            <div class="p-cover">
+              <img src="assets/covers/企业问题自检平台.svg" alt="省身 · 企业问题自检平台" loading="lazy">
+            </div>
+            <div class="p-body">
+              <h3>省身 · 企业问题自检平台</h3>
+              <p>文档导入 → AI 抽题 → 翻卡自检 → 薄弱汇总的企业问题自检平台，自研 SRS 间隔重复算法，26 项功能 / 297 项回归全绿。</p>
+              <div class="p-tags"><span>FastAPI</span><span>SQLite</span><span>SRS 算法</span><span>AI 抽题</span></div>
+              <div class="p-actions">
+                <a class="p-btn primary" href="https://question-self-check.app.workbuddy.host/" target="_blank" rel="noopener">查看项目</a>
+                <a class="p-btn ghost" href="https://github.com/itzmy-web/2.question-self-check" target="_blank" rel="noopener">源码</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="glass-ultra project-card reveal" data-cat="ai">
+            <div class="p-cover">
+              <img src="assets/covers/四合一 AI 融合工作台.svg" alt="融界 · 四合一 AI 融合工作台" loading="lazy">
+              <span class="p-flag">旗舰</span>
+            </div>
+            <div class="p-body">
+              <h3>融界 · 四合一 AI 融合工作台</h3>
+              <p>将 RAG 智库、AI 合同审批、电商小二客服、电商运营助手四个独立项目融合为单端口工作台：36 个 API、三轨对话引擎、数据驱动合同规则引擎、FTS5 中文检索，LLM 双链路无 Key 自动降级。</p>
+              <div class="p-tags"><span>Python</span><span>FastAPI</span><span>SQLite</span><span>FTS5</span><span>单端口聚合</span></div>
+              <div class="p-actions">
+                <a class="p-btn primary" href="https://fusion-workbench-confirm.app.workbuddy.host/" target="_blank" rel="noopener">查看项目</a>
+                <a class="p-btn ghost" href="https://github.com/itzmy-web/8.ai-demo" target="_blank" rel="noopener">源码</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 技术栈 ===== -->
+    <section class="section section-alt" id="stack">
+      <div class="section-inner">
+        <div class="sec-head reveal">
+          <h2>技术<span class="grad-text">栈</span></h2>
+          <p>掌握的现代技术栈和工具，持续学习和实践最新技术</p>
+        </div>
+        <div class="stack-grid">
+          <div class="glass-ultra stack-card reveal">
+            <div class="stack-head">
+              <div class="stack-icon si-blue">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
+              </div>
+              <div>
+                <h3>前端技术</h3>
+                <span class="stack-avg">平均 72</span>
+              </div>
+            </div>
+            <div class="skill-row"><div class="skill-info"><span class="skill-name">HTML / CSS / JS</span><span class="skill-level">Advanced · 78</span></div><p>独立完成交互界面与响应式布局，注重细节与可访问性</p></div>
+            <div class="skill-row"><div class="skill-info"><span class="skill-name">Vue</span><span class="skill-level">Advanced · 72</span></div><p>阅读并改造多个 Vue 项目，熟悉组件与状态管理</p></div>
+            <div class="skill-row"><div class="skill-info"><span class="skill-name">Next.js</span><span class="skill-level">Intermediate · 68</span></div><p>了解 App Router 与 SSR，跟进参考项目学习</p></div>
+          </div>
+
+          <div class="glass-ultra stack-card reveal">
+            <div class="stack-head">
+              <div class="stack-icon si-purple">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>
+              </div>
+              <div>
+                <h3>后端技术</h3>
+                <span class="stack-avg">平均 84</span>
+              </div>
+            </div>
+            <div class="skill-row"><div class="skill-info"><span class="skill-name">Python</span><span class="skill-level">Expert · 90</span></div><p>主力开发语言，8 个上线项目全部基于 Python 构建</p></div>
+            <div class="skill-row"><div class="skill-info"><span class="skill-name">FastAPI</span><span class="skill-level">Expert · 85</span></div><p>36 个 RESTful API 设计实战，Pydantic 与依赖注入熟练</p></div>
+            <div class="skill-row"><div class="skill-info"><span class="skill-name">SQL 数据库</span><span class="skill-level">Advanced · 80</span></div><p>SQLite WAL/FTS5、MySQL 多表关联与查询优化实践</p></div>
+          </div>
+
+          <div class="glass-ultra stack-card reveal">
+            <div class="stack-head">
+              <div class="stack-icon si-pink">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/></svg>
+              </div>
+              <div>
+                <h3>AI 集成</h3>
+                <span class="stack-avg">平均 80</span>
+              </div>
+            </div>
+            <div class="skill-row"><div class="skill-info"><span class="skill-name">LangGraph / DeepAgents</span><span class="skill-level">Advanced · 80</span></div><p>多 Agent 编排、子代理上下文隔离、HITL 中断实战</p></div>
+            <div class="skill-row"><div class="skill-info"><span class="skill-name">RAG 检索增强</span><span class="skill-level">Advanced · 78</span></div><p>FTS5 中文二元分词、Qdrant + ES 双索引、bge embedding</p></div>
+            <div class="skill-row"><div class="skill-info"><span class="skill-name">LLM 应用</span><span class="skill-level">Advanced · 82</span></div><p>多链路故障降级、Text2SQL、意图路由与防幻觉校验</p></div>
+          </div>
+
+          <div class="glass-ultra stack-card reveal">
+            <div class="stack-head">
+              <div class="stack-icon si-cyan">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 0 0 .5-8.98 6 6 0 0 0-11.65-2.5A4.5 4.5 0 0 0 6.5 19z"/></svg>
+              </div>
+              <div>
+                <h3>云服务</h3>
+                <span class="stack-avg">平均 72</span>
+              </div>
+            </div>
+            <div class="skill-row"><div class="skill-info"><span class="skill-name">Docker</span><span class="skill-level">Advanced · 72</span></div><p>Compose 多服务编排、偏移端口部署、数据卷持久化</p></div>
+            <div class="skill-row"><div class="skill-info"><span class="skill-name">Git</span><span class="skill-level">Expert · 85</span></div><p>分支管理、SSH 免 token 推送、多副本代码同步策略</p></div>
+            <div class="skill-row"><div class="skill-info"><span class="skill-name">Linux 部署</span><span class="skill-level">Intermediate · 65</span></div><p>内网服务器运维、uv 虚拟环境、后台服务管理</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== AI 开发工具 ===== -->
+    <section class="section" id="tools">
+      <div class="section-inner">
+        <div class="sec-head reveal">
+          <h2>AI 开发<span class="grad-text">工具</span></h2>
+          <p>日常使用的 AI 工具集合，提升开发效率和代码质量</p>
+        </div>
+        <div class="tool-stats reveal">
+          <div class="glass-ultra tool-stat"><b>90%</b><span>开发效率提升</span></div>
+          <div class="glass-ultra tool-stat"><b>92</b><span>工具平均评分</span></div>
+          <div class="glass-ultra tool-stat"><b>100%</b><span>日常使用</span></div>
+        </div>
+        <div class="tool-grid">
+          <div class="glass-ultra tool-card reveal">
+            <div class="tool-top">
+              <div class="tool-icon ti-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg></div>
+              <div class="tool-title">
+                <h3>Claude Code</h3>
+                <span class="tool-cat">Development</span>
+              </div>
+              <span class="tool-rating">95</span>
+            </div>
+            <p>Anthropic 的 AI 编程助手，支持代码生成、调试和重构，是日常开发的主力工具。</p>
+            <div class="tool-features"><span>代码生成</span><span>智能调试</span><span>重构建议</span><span>技术栈支持</span></div>
+            <div class="tool-rec"><span>推荐指数</span><div class="rec-bar"><i style="--w:95%"></i></div><b>95</b></div>
+            <a class="tool-more" href="https://claude.com/claude-code" target="_blank" rel="noopener">了解更多 →</a>
+          </div>
+
+          <div class="glass-ultra tool-card reveal">
+            <div class="tool-top">
+              <div class="tool-icon ti-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16z"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg></div>
+              <div class="tool-title">
+                <h3>Cursor</h3>
+                <span class="tool-cat">Development</span>
+              </div>
+              <span class="tool-rating">92</span>
+            </div>
+            <p>基于 AI 的智能代码编辑器，提供上下文感知的编码体验与项目级理解。</p>
+            <div class="tool-features"><span>AI 补全</span><span>代码解释</span><span>重构助手</span><span>项目理解</span></div>
+            <div class="tool-rec"><span>推荐指数</span><div class="rec-bar"><i style="--w:92%"></i></div><b>92</b></div>
+            <a class="tool-more" href="https://cursor.com" target="_blank" rel="noopener">了解更多 →</a>
+          </div>
+
+          <div class="glass-ultra tool-card reveal">
+            <div class="tool-top">
+              <div class="tool-icon ti-cyan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 21.416a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/></svg></div>
+              <div class="tool-title">
+                <h3>LangGraph</h3>
+                <span class="tool-cat">AI Framework</span>
+              </div>
+              <span class="tool-rating">90</span>
+            </div>
+            <p>多 Agent 工作流编排框架，12 节点 Text2SQL Agent 与四合一工作台的核心骨架。</p>
+            <div class="tool-features"><span>状态图</span><span>多 Agent</span><span>HITL</span><span>Checkpoint</span></div>
+            <div class="tool-rec"><span>推荐指数</span><div class="rec-bar"><i style="--w:90%"></i></div><b>90</b></div>
+            <a class="tool-more" href="https://langchain-ai.github.io/langgraph/" target="_blank" rel="noopener">了解更多 →</a>
+          </div>
+
+          <div class="glass-ultra tool-card reveal">
+            <div class="tool-top">
+              <div class="tool-icon ti-pink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v1m6.364 1.636-.707.707M21 12h-1M4 12H3m3.343-5.657-.707-.707m2.828 9.9a5 5 0 1 1 7.072 0l-.548.547A3.374 3.374 0 0 0 14 18.469V19a2 2 0 1 1-4 0v-.531c0-.895-.356-1.754-.988-2.386z"/></svg></div>
+              <div class="tool-title">
+                <h3>DeepAgents</h3>
+                <span class="tool-cat">AI Framework</span>
+              </div>
+              <span class="tool-rating">85</span>
+            </div>
+            <p>罗盘医药智能体的底层框架，子代理上下文隔离与工具调用开箱即用。</p>
+            <div class="tool-features"><span>子代理隔离</span><span>工具调用</span><span>规划执行</span><span>长任务</span></div>
+            <div class="tool-rec"><span>推荐指数</span><div class="rec-bar"><i style="--w:85%"></i></div><b>85</b></div>
+            <a class="tool-more" href="https://github.com/langchain-ai/deepagents" target="_blank" rel="noopener">了解更多 →</a>
+          </div>
+
+          <div class="glass-ultra tool-card reveal">
+            <div class="tool-top">
+              <div class="tool-icon ti-emerald"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></svg></div>
+              <div class="tool-title">
+                <h3>RAGFlow</h3>
+                <span class="tool-cat">Knowledge Base</span>
+              </div>
+              <span class="tool-rating">82</span>
+            </div>
+            <p>开源 RAG 引擎，罗盘医药智能体的知识检索通道，支持文档解析与深度问答。</p>
+            <div class="tool-features"><span>文档解析</span><span>深度问答</span><span>知识检索</span><span>引用溯源</span></div>
+            <div class="tool-rec"><span>推荐指数</span><div class="rec-bar"><i style="--w:82%"></i></div><b>82</b></div>
+            <a class="tool-more" href="https://ragflow.io" target="_blank" rel="noopener">了解更多 →</a>
+          </div>
+
+          <div class="glass-ultra tool-card reveal">
+            <div class="tool-top">
+              <div class="tool-icon ti-orange"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+              <div class="tool-title">
+                <h3>WorkBuddy</h3>
+                <span class="tool-cat">AI Workspace</span>
+              </div>
+              <span class="tool-rating">93</span>
+            </div>
+            <p>日常主力 AI 工作台，从需求分析、编码实现到一键云端部署的全流程伙伴。</p>
+            <div class="tool-features"><span>全栈开发</span><span>一键部署</span><span>技能扩展</span><span>多专家协同</span></div>
+            <div class="tool-rec"><span>推荐指数</span><div class="rec-bar"><i style="--w:93%"></i></div><b>93</b></div>
+            <a class="tool-more" href="https://www.workbuddy.cn" target="_blank" rel="noopener">了解更多 →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 项目服务 ===== -->
+    <section class="section section-alt" id="services">
+      <div class="section-inner">
+        <div class="sec-head reveal">
+          <h2>项目<span class="grad-text">服务</span></h2>
+          <p>基于真实项目经验提供的开发服务，满足不同业务场景需求</p>
+        </div>
+        <div class="service-grid">
+          <div class="glass-ultra service-card reveal">
+            <div class="service-top">
+              <div class="service-icon si-blue">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              </div>
+              <span class="service-price">按项目计费</span>
+            </div>
+            <h3>智能客服系统定制</h3>
+            <p>基于三轨对话引擎的智能客服系统，支持意图路由、知识问答与业务 flow 配置，电商小二同款架构。</p>
+            <div class="service-features"><span>三轨对话</span><span>意图路由</span><span>防幻觉校验</span><span>会话持久化</span><span>人工接管</span></div>
+            <a class="service-btn" href="https://wx.mail.qq.com/" target="_blank" rel="noopener">咨询服务</a>
+          </div>
+
+          <div class="glass-ultra service-card reveal">
+            <div class="service-top">
+              <div class="service-icon si-purple">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+              </div>
+              <span class="service-price">按项目计费</span>
+            </div>
+            <h3>RAG 知识库搭建</h3>
+            <p>文档导入、自动分块、全文检索与带引用问答的完整 RAG 知识库，RAG 智能智库同款，支持 LLM 增强与无 Key 演示双模式。</p>
+            <div class="service-features"><span>文档入库</span><span>全文检索</span><span>引用问答</span><span>中文分词优化</span><span>双模式</span></div>
+            <a class="service-btn" href="https://wx.mail.qq.com/" target="_blank" rel="noopener">咨询服务</a>
+          </div>
+
+          <div class="glass-ultra service-card reveal">
+            <div class="service-top">
+              <div class="service-icon si-pink">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>
+              </div>
+              <span class="service-price">按项目计费</span>
+            </div>
+            <h3>AI 智能体开发</h3>
+            <p>基于 LangGraph / DeepAgents 的行业智能体：数据库对接、工具调用、多 Agent 编排与故障自动降级，罗盘医药同款架构。</p>
+            <div class="service-features"><span>多 Agent</span><span>工具调用</span><span>数据库对接</span><span>联网搜索</span><span>自动降级</span></div>
+            <a class="service-btn" href="https://wx.mail.qq.com/" target="_blank" rel="noopener">咨询服务</a>
+          </div>
+
+          <div class="glass-ultra service-card reveal">
+            <div class="service-top">
+              <div class="service-icon si-cyan">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+              </div>
+              <span class="service-price">订阅制</span>
+            </div>
+            <h3>数据看板与问数系统</h3>
+            <p>经营数据看板与 NL2SQL 问数系统：自然语言查数据、图表可视化、经营指标统计，运营助手与问数 ChatBI 同款。</p>
+            <div class="service-features"><span>自然语言查数</span><span>数据看板</span><span>指标统计</span><span>图表导出</span><span>持续迭代</span></div>
+            <a class="service-btn" href="https://wx.mail.qq.com/" target="_blank" rel="noopener">咨询服务</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 学习历程 ===== -->
+    <section class="section" id="journey">
+      <div class="section-inner">
+        <div class="sec-head reveal">
+          <h2>学习<span class="grad-text">历程</span></h2>
+          <p>从后端入门到 AI 应用落地，一步一个脚印</p>
+        </div>
+        <div class="timeline">
+          <div class="tl-item reveal">
+            <div class="tl-icon ti-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></div>
+            <div class="glass-ultra tl-card">
+              <div class="tl-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>2026-01</div>
+              <h3>前端与编程基础</h3>
+              <p>系统学习 HTML / CSS / JavaScript 与 Vue，完成第一个响应式页面，建立前端工程化思维。</p>
+              <div class="p-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Vue</span></div>
+              <span class="tl-badge tl-badge-blue">学习</span>
+            </div>
+          </div>
+
+          <div class="tl-item reveal">
+            <div class="tl-icon ti-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg></div>
+            <div class="glass-ultra tl-card">
+              <div class="tl-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>2026-03</div>
+              <h3>Python 后端进阶</h3>
+              <p>转向 Python 后端，掌握 FastAPI 与 RESTful API 设计，完成第一个 FastAPI + SQLite 全栈项目。</p>
+              <div class="p-tags"><span>Python</span><span>FastAPI</span><span>SQLite</span><span>RESTful</span></div>
+              <span class="tl-badge tl-badge-blue">项目</span>
+            </div>
+          </div>
+
+          <div class="tl-item reveal">
+            <div class="tl-icon ti-cyan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg></div>
+            <div class="glass-ultra tl-card">
+              <div class="tl-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>2026-05</div>
+              <h3>多 Agent 框架实战</h3>
+              <p>学习 LangGraph / DeepAgents，完成 CEO→CTO→CODER 多 Agent demo 与 HITL 中断、子代理上下文隔离等十大组件实践。</p>
+              <div class="p-tags"><span>LangGraph</span><span>DeepAgents</span><span>多 Agent</span><span>HITL</span></div>
+              <span class="tl-badge tl-badge-purple">学习</span>
+            </div>
+          </div>
+
+          <div class="tl-item reveal">
+            <div class="tl-icon ti-pink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg></div>
+            <div class="glass-ultra tl-card">
+              <div class="tl-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>2026-07</div>
+              <h3>RAG 检索增强落地</h3>
+              <p>攻克 SQLite FTS5 中文检索难题（二元分词双侧展开），完成 RAG 智能智库与 Qdrant + ES 双索引实践。</p>
+              <div class="p-tags"><span>RAG</span><span>FTS5</span><span>Qdrant</span><span>Elasticsearch</span></div>
+              <span class="tl-badge tl-badge-purple">项目</span>
+            </div>
+          </div>
+
+          <div class="tl-item reveal">
+            <div class="tl-icon ti-emerald"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg></div>
+            <div class="glass-ultra tl-card">
+              <div class="tl-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>2026-09</div>
+              <h3>多项目并行实战</h3>
+              <p>电商小二智能客服、AI 合同审批、罗盘医药智能体、企业问题自检平台四个项目并行推进，全部上线可演示。</p>
+              <div class="p-tags"><span>智能客服</span><span>合同审批</span><span>医药智能体</span><span>问题自检</span></div>
+              <span class="tl-badge tl-badge-green">成就</span>
+            </div>
+          </div>
+
+          <div class="tl-item reveal">
+            <div class="tl-icon ti-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></div>
+            <div class="glass-ultra tl-card">
+              <div class="tl-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>2026-10</div>
+              <h3>四合一融合工作台上线</h3>
+              <p>将四个独立项目融合为单端口工作台：36 个 API、LLM 双链路无 Key 自动降级，代码开源至 GitHub 并云端部署。</p>
+              <div class="p-tags"><span>单端口聚合</span><span>LLM 双链路</span><span>GitHub 开源</span><span>云端部署</span></div>
+              <span class="tl-badge tl-badge-green">成就</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 页脚 ===== -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <p class="footer-copy">© <span id="year">2026</span> 郑孟瑶 · 个人作品集 · Built with FastAPI, SQLite, and <span class="footer-love">❤</span></p>
+        <div class="footer-links">
+          <a href="resume.html">查看简历</a>
+          <a href="https://github.com/itzmy-web" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://fusion-workbench-confirm.app.workbuddy.host/" target="_blank" rel="noopener">在线演示</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="assets/main.js"></script>
+</body>
+</html>
