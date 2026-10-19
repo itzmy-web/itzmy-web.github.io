@@ -19,10 +19,8 @@
   <circle cx="85" cy="345" r="75" fill="#7c3aed" opacity=".08"/>
   <g filter="url(#glow)" transform="translate(320 185)">
     <g transform="scale(3.1)" stroke="url(#g)" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M-14 -11a14 14 0 0 1 14 14v6l-5 -5h-9a14 14 0 0 1-14-14z"/>
-      <path d="M-8 1v-5M-3 1v-8M2 1v-11"/>
-      <path d="M14 -5a9 9 0 0 0-9-9"/>
+      <rect x="-14" y="-14" width="28" height="28" rx="4"/><path d="M-6 -6h12M-6 0h12M-6 6h12"/><circle cx="14" cy="-14" r="3" fill="currentColor"/><circle cx="-14" cy="14" r="3" fill="currentColor"/>
     </g>
   </g>
-  <text x="320" y="330" text-anchor="middle" font-family="sans-serif" font-size="25" font-weight="bold" fill="url(#g)">问数 ChatBI</text>
+  <text x="320" y="330" text-anchor="middle" font-family="sans-serif" font-size="25" font-weight="bold" fill="url(#g)">NexHub · AI融合枢纽工作台</text>
 </svg>

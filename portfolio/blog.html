@@ -87,7 +87,7 @@
     <!-- ===== 文章列表 ===== -->
     <section class="post-grid">
       <article class="glass-ultra post-card reveal">
-        <div class="post-meta"><span class="post-cat">RAG 检索</span><span>2026-10-15</span><span>· 灵犀智库</span></div>
+        <div class="post-meta"><span class="post-cat">RAG 检索</span><span>2026-10-15</span><span>· Knote 智源知识库</span></div>
         <h2><a href="#post-1">SQLite FTS5 中文二元分词：实现与踩坑</a></h2>
         <p>默认分词器把中文按单字切，「企业经营分析」能搜到、「经营分析企业」搜不到。二元分词 + 查询侧双侧展开，命中率才算拉起来。</p>
         <div class="post-tags"><span>FTS5</span><span>SQLite</span><span>中文分词</span></div>
@@ -101,14 +101,14 @@
       </article>
 
       <article class="glass-ultra post-card reveal">
-        <div class="post-meta"><span class="post-cat">Text2SQL</span><span>2026-10-10</span><span>· 问数 ChatBI</span></div>
+        <div class="post-meta"><span class="post-cat">Text2SQL</span><span>2026-10-10</span><span>· TalkData 对话式BI平台</span></div>
         <h2><a href="#post-3">Text2SQL 生产环境常见坑点与校验策略</a></h2>
         <p>生成的 SQL 找错表、配错关联、悄悄加上 DELETE——没有校验节点的问数系统等于把数据库钥匙交给模型。四道静态校验兜底。</p>
         <div class="post-tags"><span>Text2SQL</span><span>SQL 校验</span><span>Schema Linking</span></div>
       </article>
 
       <article class="glass-ultra post-card reveal">
-        <div class="post-meta"><span class="post-cat">工程降级</span><span>2026-10-08</span><span>· 融界工作台</span></div>
+        <div class="post-meta"><span class="post-cat">工程降级</span><span>2026-10-08</span><span>· NexHub 融合枢纽工作台</span></div>
         <h2><a href="#post-4">LLM 应用多链路故障降级方案设计</a></h2>
         <p>Key 会过期、接口会限流、服务会挂。把「模型不稳定」当成一类正常输入来设计：双链路互备 + 演示模式兜底，界面始终一致。</p>
         <div class="post-tags"><span>LLM 降级</span><span>双链路</span><span>高可用</span></div>
@@ -122,7 +122,7 @@
       </article>
 
       <article class="glass-ultra post-card reveal">
-        <div class="post-meta"><span class="post-cat">工程质量</span><span>2026-10-17</span><span>· 融界工作台</span></div>
+        <div class="post-meta"><span class="post-cat">工程质量</span><span>2026-10-17</span><span>· NexHub 融合枢纽工作台</span></div>
         <h2><a href="#post-6">用工具链守住「功能零改动」</a></h2>
         <p>重设计页面最容易顺手删掉一个 id、改掉一个 class，然后把交互悄悄改坏。静态核对 + DOM mock 测试，让回归从「凭记忆」变成「跑一遍」。</p>
         <div class="post-tags"><span>回归测试</span><span>静态核对</span><span>DOM mock</span></div>
@@ -135,7 +135,7 @@
       <article class="glass-ultra post-full-card reveal" id="post-1">
         <div class="post-meta"><span class="post-cat">RAG 检索</span><span>2026-10-15</span></div>
         <h2>SQLite FTS5 中文二元分词：实现与踩坑</h2>
-        <p>做灵犀 RAG 智库时，我选了一条「先 FTS5、后向量」的渐进路线：不引入向量库，用 SQLite 内置的全文检索先把知识库跑起来。好处是零运维、单文件部署；代价是得自己解决中文分词。</p>
+        <p>做 Knote 智源知识库时，我选了一条「先 FTS5、后向量」的渐进路线：不引入向量库，用 SQLite 内置的全文检索先把知识库跑起来。好处是零运维、单文件部署；代价是得自己解决中文分词。</p>
         <h3>坑一：默认分词器对中文基本失效</h3>
         <p>FTS5 的 <code>unicode61</code> 分词器按 Unicode 类别切分，中文一串汉字会被当成一个「词」。「企业经营分析」存进去，用户搜「经营分析」——匹配不上，因为整串才算一个 token。搜单个字又能匹配到一堆噪音。</p>
         <h3>坑二：查询词和索引词切分方式不一致</h3>
@@ -167,7 +167,7 @@ def bigrams(text):
       <article class="glass-ultra post-full-card reveal" id="post-3">
         <div class="post-meta"><span class="post-cat">Text2SQL</span><span>2026-10-10</span></div>
         <h2>Text2SQL 生产环境常见坑点与校验策略</h2>
-        <p>问数 ChatBI 的 12 节点 LangGraph Agent 里，真正决定「敢不敢上线」的不是生成节点，是校验节点。把踩过的坑按出现频率排个序：</p>
+        <p>TalkData 的 12 节点 LangGraph Agent 里，真正决定「敢不敢上线」的不是生成节点，是校验节点。把踩过的坑按出现频率排个序：</p>
         <h3>坑 1：模型不知道数据库里有什么</h3>
         <p>全量 schema 塞进 prompt，表一多就超长且干扰注意力。解法是 Schema Linking 前置：用 Qdrant + Elasticsearch 双索引 + bge embedding 把表名、字段名、注释向量化，提问时先检索最相关的表结构再生成。</p>
         <h3>坑 2：SQL 能跑但结果是错的</h3>
@@ -188,7 +188,7 @@ def bigrams(text):
       <article class="glass-ultra post-full-card reveal" id="post-4">
         <div class="post-meta"><span class="post-cat">工程降级</span><span>2026-10-08</span></div>
         <h2>LLM 应用多链路故障降级方案设计</h2>
-        <p>LLM 项目的「生产可用」，一半是功能，一半是降级。我在融界工作台和罗盘医药里把降级当成一类正常输入来设计，而不是异常处理补丁。</p>
+        <p>LLM 项目的「生产可用」，一半是功能，一半是降级。我在 NexHub 工作台和 MediNav 医药导航智能体里把降级当成一类正常输入来设计，而不是异常处理补丁。</p>
         <h3>为什么必须设计降级</h3>
         <p>Key 会过期（我自己的腾讯套餐就过期 403 过）、接口会限流（429）、服务会挂（502）、网络会抖。任何一环出问题，如果没有降级，用户看到的就是白屏或报错——演示现场出这种事，比没有 AI 功能更糟。</p>
         <h3>三级降级架构</h3>
@@ -201,7 +201,7 @@ def bigrams(text):
         <ul>
           <li>健康探测：启动即探测 LLM 可用性，徽章实时显示「LLM 已连接 / 演示模式」，不把探测中的中间态暴露给用户；</li>
           <li>超时预算：单次调用超时短于用户可感知阈值，失败立刻降级而不是让用户干等；</li>
-          <li>降级可见：罗盘里 RAGFlow 挂断时会标注「知识库降级」，用户知情不等于体验降级；</li>
+          <li>降级可见：MediNav 里 RAGFlow 挂断时会标注「知识库降级」，用户知情不等于体验降级；</li>
           <li>状态一致：三种模式共用同一套前端交互，切换对用户无感。</li>
         </ul>
         <p>这套架构的回报很直接：不管 Key 有没有效、网络通不通，演示链接随时打得开——这对求职演示不是加分项，是必选项。</p>
@@ -227,7 +227,7 @@ def bigrams(text):
       <article class="glass-ultra post-full-card reveal" id="post-6">
         <div class="post-meta"><span class="post-cat">工程质量</span><span>2026-10-17</span></div>
         <h2>用工具链守住「功能零改动」</h2>
-        <p>融界工作台做深蓝科技风重设计时，我给自己立了条规矩：只改视觉层，<code>app.js</code> 依赖的 75 个元素 id、65 个 class 一个不删。口号容易，执行难——人都会手滑。所以先写工具，再动样式。</p>
+        <p>NexHub 工作台做深蓝科技风重设计时，我给自己立了条规矩：只改视觉层，<code>app.js</code> 依赖的 75 个元素 id、65 个 class 一个不删。口号容易，执行难——人都会手滑。所以先写工具，再动样式。</p>
         <h3>工具一：静态回归核对</h3>
         <p>一个 Python 脚本，把三份清单拉齐比对：JS 里引用的 id、HTML 里定义的 id、JS 模板动态注入的 id、JS 生成的 class、CSS 定义的 class、SVG 图标符号定义与引用。任何一边缺了另一边，直接报错退出。</p>
         <pre><code># 核心逻辑（简化示意）

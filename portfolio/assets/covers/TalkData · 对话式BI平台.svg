@@ -4,7 +4,7 @@
       <stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#f1f5f9"/>
     </linearGradient>
     <linearGradient id="g" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#0891b2"/><stop offset="1" stop-color="#059669"/>
+      <stop offset="0" stop-color="#2563eb"/><stop offset="1" stop-color="#7c3aed"/>
     </linearGradient>
     <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
       <feGaussianBlur stdDeviation="4" result="b"/>
@@ -15,12 +15,14 @@
   <g stroke="rgba(37,99,235,.05)" stroke-width="1">
     <path d="M0 80h640M0 160h640M0 240h640M0 320h640M80 0v400M160 0v400M240 0v400M320 0v400M400 0v400M480 0v400M560 0v400"/>
   </g>
-  <circle cx="545" cy="65" r="85" fill="#0891b2" opacity=".07"/>
-  <circle cx="85" cy="345" r="75" fill="#059669" opacity=".08"/>
+  <circle cx="545" cy="65" r="85" fill="#2563eb" opacity=".07"/>
+  <circle cx="85" cy="345" r="75" fill="#7c3aed" opacity=".08"/>
   <g filter="url(#glow)" transform="translate(320 185)">
     <g transform="scale(3.1)" stroke="url(#g)" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M-13 10v-8l6 -6 5 5 8 -9"/><path d="M-13 -2h26M-13 6h18"/><rect x="-15" y="-14" width="30" height="26" rx="3"/>
+      <path d="M-14 -11a14 14 0 0 1 14 14v6l-5 -5h-9a14 14 0 0 1-14-14z"/>
+      <path d="M-8 1v-5M-3 1v-8M2 1v-11"/>
+      <path d="M14 -5a9 9 0 0 0-9-9"/>
     </g>
   </g>
-  <text x="320" y="330" text-anchor="middle" font-family="sans-serif" font-size="25" font-weight="bold" fill="url(#g)">AI 电商运营助手</text>
+  <text x="320" y="330" text-anchor="middle" font-family="sans-serif" font-size="25" font-weight="bold" fill="url(#g)">TalkData · 对话式BI平台</text>
 </svg>

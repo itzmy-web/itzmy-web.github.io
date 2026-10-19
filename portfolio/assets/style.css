@@ -248,6 +248,7 @@ button { font-family: inherit; }
 .p-body { padding: 1.5rem; display: flex; flex-direction: column; flex: 1; }
 .p-body h3 { font-size: 1.125rem; font-weight: 600; margin-bottom: .5rem; transition: color var(--dur-normal); }
 .project-card:hover .p-body h3 { color: var(--primary-blue); }
+.p-body p.p-slogan { font-size: .8rem; font-weight: 600; color: var(--primary-blue); line-height: 1.6; margin-bottom: .6rem; }
 .p-body > p { font-size: .875rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 1rem; flex: 1; }
 .p-tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: 1rem; }
 .p-tags span {
@@ -614,6 +615,7 @@ a.contact-card:hover { transform: translateY(-4px); border-color: rgba(37, 99, 2
 }
 .case-head-icon svg { width: 1.5rem; height: 1.5rem; }
 .case-head h2 { font-size: 1.4rem; font-weight: 700; }
+.case-head p.p-slogan { font-size: .92rem; font-weight: 600; color: var(--primary-blue); line-height: 1.6; margin-top: .3rem; }
 .case-head > div > p { font-size: .88rem; color: var(--text-muted); margin-top: .2rem; }
 .case-flag {
   margin-left: auto; padding: .25rem .75rem; border-radius: 9999px;
